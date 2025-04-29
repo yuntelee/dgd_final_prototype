@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://bufc2pdf4kbcy"]
+
+[ext_resource type="Script" path="res://intro.gd" id="1_0mwb8"]
+
+[node name="intro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0mwb8")
+
+[node name="intro_text" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.101
+anchor_top = -0.021
+anchor_right = 0.805
+anchor_bottom = 0.406
+offset_left = 76.648
+offset_top = 36.608
+offset_right = -64.3601
+offset_bottom = -120.088
+text = "MAZE RUN
+Use arrow keys to move
+Collect coins
+Avoid enemies
+Get hit by enemies 3 times and lose the game
+Reach all the green squares to win the game"
+horizontal_alignment = 1
+
+[node name="start_button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.299
+anchor_top = 0.652
+anchor_right = 0.657
+anchor_bottom = 0.867
+offset_left = 33.552
+offset_top = 33.504
+offset_right = -36.864
+offset_bottom = -33.816
+text = "START"
+
+[connection signal="pressed" from="start_button" to="." method="_on_start_button_pressed"]
