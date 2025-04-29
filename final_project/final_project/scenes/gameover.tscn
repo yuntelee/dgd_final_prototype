@@ -1,10 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://cn7v5cdhfcdlh"]
+[gd_scene load_steps=3 format=3 uid="uid://cn7v5cdhfcdlh"]
 
+[ext_resource type="Script" path="res://scenes/gameover.gd" id="1_2b3sc"]
 [ext_resource type="Texture2D" uid="uid://cqt0jcf5lwjft" path="res://gameover.png" id="1_stk81"]
 
 [node name="Gameover" type="Node2D"]
+script = ExtResource("1_2b3sc")
 
 [node name="Gameover" type="Sprite2D" parent="."]
 position = Vector2(576, 328)
 scale = Vector2(1.4403, 1.19557)
 texture = ExtResource("1_stk81")
+
+[node name="home" type="Button" parent="."]
+offset_left = 613.0
+offset_top = 521.0
+offset_right = 959.0
+offset_bottom = 611.0
+text = "Home"
+
+[node name="retry" type="Button" parent="."]
+offset_left = 156.0
+offset_top = 518.0
+offset_right = 502.0
+offset_bottom = 608.0
+text = "Restart"
+
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="retry" to="." method="_on_retry_pressed"]

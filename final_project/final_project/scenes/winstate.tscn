@@ -1,10 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://bd11mxec6o21w"]
+[gd_scene load_steps=3 format=3 uid="uid://bd11mxec6o21w"]
 
 [ext_resource type="Texture2D" uid="uid://dhuydvljutitw" path="res://winstate.png" id="1_2q1ic"]
+[ext_resource type="Script" path="res://scenes/winstate.gd" id="1_f67lt"]
 
 [node name="Winstate" type="Node2D"]
+script = ExtResource("1_f67lt")
 
 [node name="Winstate" type="Sprite2D" parent="."]
 position = Vector2(576.25, 358.5)
 scale = Vector2(0.485625, 0.490728)
 texture = ExtResource("1_2q1ic")
+
+[node name="restart" type="Button" parent="."]
+offset_left = 152.0
+offset_top = 560.0
+offset_right = 468.0
+offset_bottom = 626.0
+text = "Replay"
+
+[node name="home" type="Button" parent="."]
+offset_left = 699.0
+offset_top = 558.0
+offset_right = 983.0
+offset_bottom = 633.0
+text = "Home"
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="home" to="." method="_on_home_pressed"]
