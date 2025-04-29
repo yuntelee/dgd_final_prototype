@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bit578xbd7j0c"]
+
+[ext_resource type="Texture2D" uid="uid://cqk6ertq2gkos" path="res://green.png" id="1_j1mrk"]
+[ext_resource type="Script" path="res://scripts/next_lvl.gd" id="1_wg4hm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aklt1"]
+atlas = ExtResource("1_j1mrk")
+region = Rect2(0, 8, 4, 4)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3uxrp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aklt1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgagq"]
+
+[node name="NextLvl" type="Area2D"]
+script = ExtResource("1_wg4hm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, 4.76837e-07)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_3uxrp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sgagq")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
