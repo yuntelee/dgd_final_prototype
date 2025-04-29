@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://ds8mf8v2hl2y7"]
+[gd_scene load_steps=15 format=4 uid="uid://ds8mf8v2hl2y7"]
 
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_ejswk"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_s8u1p"]
 [ext_resource type="Texture2D" uid="uid://dqk3fdwuasr5n" path="res://assets/Tilemap/tilemap-backgrounds_packed.png" id="2_5qvyw"]
 [ext_resource type="PackedScene" uid="uid://cxwo35e6malco" path="res://scenes/player.tscn" id="3_mpes2"]
@@ -108,6 +109,7 @@ sources/0 = SubResource("TileSetAtlasSource_xsnn3")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(24, -4)
 zoom = Vector2(1.5, 1.5)
+script = ExtResource("1_ejswk")
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true

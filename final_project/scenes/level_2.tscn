@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://c5wghkja2xgu4"]
+[gd_scene load_steps=15 format=4 uid="uid://c5wghkja2xgu4"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_pwpfy"]
 [ext_resource type="Texture2D" uid="uid://dqk3fdwuasr5n" path="res://assets/Tilemap/tilemap-backgrounds_packed.png" id="2_5wr41"]
 [ext_resource type="PackedScene" uid="uid://cxwo35e6malco" path="res://scenes/player.tscn" id="3_ry0ne"]
 [ext_resource type="PackedScene" uid="uid://dsfoc8whcl6ko" path="res://scenes/enemy.tscn" id="4_57h28"]
 [ext_resource type="PackedScene" uid="uid://rnyjlv5n6dtu" path="res://scenes/coin.tscn" id="5_ffnmn"]
+[ext_resource type="PackedScene" uid="uid://bit578xbd7j0c" path="res://scenes/next_lvl.tscn" id="6_d4jwl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_8seqe"]
 vertices = PackedVector2Array(9, 9, -9, 9, -9, -9, 9, -9)
@@ -289,10 +290,20 @@ position = Vector2(283, 29)
 [node name="Player" parent="." instance=ExtResource("3_ry0ne")]
 position = Vector2(-328, -142)
 
-[node name="Enemy" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_57h28")]
+[node name="Enemy" parent="." instance=ExtResource("4_57h28")]
 position = Vector2(376, -183)
-player = NodePath("../Player")
 
-[node name="Enemy2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("4_57h28")]
+[node name="Enemy2" parent="." instance=ExtResource("4_57h28")]
 position = Vector2(-313, 139)
-player = NodePath("../Player")
+
+[node name="NextLvl" parent="." instance=ExtResource("6_d4jwl")]
+position = Vector2(312, 167)
+
+[node name="NextLvl2" parent="." instance=ExtResource("6_d4jwl")]
+position = Vector2(328, 167)
+
+[node name="NextLvl3" parent="." instance=ExtResource("6_d4jwl")]
+position = Vector2(312, 183)
+
+[node name="NextLvl4" parent="." instance=ExtResource("6_d4jwl")]
+position = Vector2(328, 183)
